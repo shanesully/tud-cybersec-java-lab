@@ -7,9 +7,8 @@ A Docker-based solution for getting __JavaVulnerableLab__ up and running easily
 
 ## Setup
 1. Run _Docker Desktop_
-3. Build __JavaVulnerableLab.war__
-3. Create a sub-directory called _artifacts_ under _tud-cybersec-java-lab_ 
-4. Move __JavaVulnerableLab.war__ to _tud-cybersec-java-lab/artifacts/JavaVulnerableLab.war_
+2. Build __JavaVulnerableLab.war__
+3. Move __JavaVulnerableLab.war__ to _tud-cybersec-java-lab/artifacts/JavaVulnerableLab.war_
 4. Run `docker-compose up` from __tud-cybersec-java-lab_
 5. Open: [http://localhost:8080/JavaVulnerableLab/install.jsp](http://localhost:8080/JavaVulnerableLab/install.jsp)
 6. Replace `jdbc:mysql://mysql:3306/` with `jdbc:mysql://mysql:3306/abc` for __JDBC URL__
