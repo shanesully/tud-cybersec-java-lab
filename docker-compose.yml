@@ -1,0 +1,24 @@
+version: '3.3'
+
+services:
+  tud-cybersec-mysql:
+    image: mysql:8
+    ports:
+      - 3306:3306
+    container_name: tud-cybersec-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: "root"
+    hostname: mysql # for JDBC URL
+    volumes:
+     - "./scripts/schema.sql:/docker-entrypoint-initdb.d/1.sql"
+     - "./scripts/data.sql:/docker-entrypoint-initdb.d/2.sql"
+  tud-cybersec-tomcat:
+    image: tomcat:9
+    depends_on:
+      - tud-cybersec-mysql
+    ports:
+      - 8080:8080
+    container_name: tud-cybersec-tomcat
+    command: catalina.sh run
+    volumes:
+      - ./artifacts/JavaVulnerableLab.war:/usr/local/tomcat/webapps/JavaVulnerableLab.war
