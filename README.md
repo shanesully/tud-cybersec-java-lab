@@ -16,7 +16,7 @@ A Docker-based solution for getting __JavaVulnerableLab__ up and running easily
 7. Click _Install_
 
 ## Optional Steps
-### View Database using MySQL Workbench
+### Manage the Database with MySQL Workbench
 1. Run _MySQL Workbench_
 2. Click the '+' symbol beside _MySQL Connections_
 3. Set a _Connection Name_
@@ -25,5 +25,3 @@ A Docker-based solution for getting __JavaVulnerableLab__ up and running easily
 6. Click _Ok_
 7. Click _Test Connection_
 8. If _Test Connection_ succeeds, click _Ok_
-
-You can now administer the database through _MySQL Workbench_
