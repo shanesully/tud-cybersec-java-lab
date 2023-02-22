@@ -1,26 +1,70 @@
 # tud-cybersec-java-lab
 A Docker-based solution for getting __JavaVulnerableLab__ up and running
 
-## Prerequisite
-1. Install [Docker Desktop](https://www.docker.com/products/docker-desktop/)
-2. Install [MySQL Workbench](https://www.mysql.com/products/workbench/) (optional)
-
 ## Setup
-1. Run _Docker Desktop_
-2. Build __JavaVulnerableLab.war__ (source not included)
-3. Move __JavaVulnerableLab.war__ to _tud-cybersec-java-lab/artifacts/JavaVulnerableLab.war_
-4. Run `docker-compose up` from __tud-cybersec-java-lab_
-5. Open: [http://localhost:8080/JavaVulnerableLab/install.jsp](http://localhost:8080/JavaVulnerableLab/install.jsp)
-6. Replace `jdbc:mysql://mysql:3306/` with `jdbc:mysql://mysql:3306/abc` in the __JDBC URL__
-7. Click _Install_
+### Prerequisites
+1. Installed [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+3. Downloaded _JavaVulnerableLab.zip_ from _Lab2- Java- Vulnerable-LabAssignment_ on Moodle
 
-## Optional Steps
-### Manage the Database with MySQL Workbench
+### Build JavaVulnerableLab.war
+1. Extract _JavaVulnerableLab.zip_
+2. Run `mvn clean package` from the _JavaVulnerableLab_ directory
+3. Move _JavaVulnerableLab/target/JavaVulnerableLab.war_ to _tud-cybersec-java-lab/artifacts/JavaVulnerableLab.war_
+
+### Setup Docker
+1. Start _Docker Desktop_
+2. Run `docker compose up` from the _tud-cybersec-java-lab_ directory
+
+### Install Data
+1. Open in browser: [http://localhost:8080/JavaVulnerableLab/install.jsp](http://localhost:8080/JavaVulnerableLab/install.jsp)
+2. Replace the __JDBC URL__ String with `jdbc:mysql://mysql:3306/abc`
+3. Click _Install_
+
+## Optional Step - Manage the Database with MySQL Workbench
+### Prerequisites
+Install [MySQL Workbench](https://www.mysql.com/products/workbench/)
+
+### Add the MySQL Connection
 1. Run _MySQL Workbench_
 2. Click the '+' symbol beside _MySQL Connections_
-3. Set a _Connection Name_
-4. Keep the default values and click _Store in Vault ..._
-5. Set "root" as the root password
+3. Enter _tud-cybersec-java-lab_ for _Connection Name_ 
+4. Keep default values and click _Store in Vault ..._
+5. Enter "root" for the root password
 6. Click _Ok_
 7. Click _Test Connection_
 8. If _Test Connection_ succeeds, click _Ok_
+
+### Query the abc Database
+Run the following in the _MySQL Workbench_ query editor:
+```
+USE `abc`;
+SHOW TABLES;
+```
+
+Should return:
+```
+cards
+FilesList
+Messages
+posts
+tdata
+UserMessages
+users
+```
+
+### Query the trump Database
+Run the following in the _MySQL Workbench_ query editor:
+```
+USE `trump`;
+SHOW TABLES;
+```
+
+Should return:
+```
+carddetail
+posts
+users
+```
+
+## Teardown
+To teardown the lab environment run: `docker compose down`
