@@ -17,8 +17,12 @@ services:
     depends_on:
       - tud-cybersec-mysql
     ports:
-      - 8080:8080
+      - 8080:8080 # for application
+      - 8001:8001 # for Java debug
     container_name: tud-cybersec-tomcat
-    command: catalina.sh run
+    environment:
+      JPDA_ADDRESS: "*:8001" # Java 9 syntax
+      JPDA_TRANSPORT: dt_socket
+    command: catalina.sh jpda run
     volumes:
       - ./artifacts/JavaVulnerableLab.war:/usr/local/tomcat/webapps/JavaVulnerableLab.war
