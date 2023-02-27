@@ -5,10 +5,10 @@ A Docker-based solution to run the __JavaVulnerableLab__ for the TUD Cyber Secur
 ### Prerequisites
 1. Installed [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 2. Installed [Maven](https://maven.apache.org/)
-3. Set your __"JAVA_HOME"__ environment variable to point to a Java 8 SDK (the Tomcat image uses "openjdk 17.0.6" but the war file _must_ be built with Java 8)
+3. Set your __"JAVA_HOME"__ environment variable to point to a Java 8 SDK (the Tomcat image uses _"openjdk 17.0.6"_ but the war file __must__ be built with Java 8)
 
 ### Setup Script
-To setup the JavaVulnerableLab, run the setup script if you're on on macOS, Linux or WSL:
+To setup the JavaVulnerableLab, run the setup script if you're on on __macOS__, __Linux__ or __WSL__:
 
 ```./setup.sh```
 
@@ -24,17 +24,17 @@ This will build the Maven project and move the resulting war file to the artifac
 3. Click _Install_
 
 ## Optional Step - Attach to IntelliJ Debugger
-The above configuration starts the JavaVulnerableLab in debug mode by default. To connect to it:
-1. Open the JavaVulnerableLab project in IntelliJ
-2. In the IntelliJ top-level menu, select "Run" -> "Edit Configurations..."
-3. Click '+' -> "Add New Configuration" -> "Remote JVM Debug"
-4. Select "Attach to remote JVM" for "Debugger Mode"
-5. Select "Socket" for "Transport"
-6. Enter "localhost" for "Host"
-7. Enter "8000" for "Port"
-8. Select "JDK 9 or later" beside "Command line arguments for remote JVM"
-9. Select "JavaVulnerableLab" for "Use module classpath"
-10. Click "Apply" and then "Ok"
+The above configuration starts the __JavaVulnerableLab__ in _debug mode_ by default. To connect to it:
+1. Open the __JavaVulnerableLab__ project in __IntelliJ__
+2. In the IntelliJ top-level menu, select _"Run"_ -> _"Edit Configurations..."_
+3. Click _'+'_ -> _"Add New Configuration"_ -> _"Remote JVM Debug"_
+4. Select _"Attach to remote JVM"_ for _"Debugger Mode"_
+5. Select _"Socket"_ for _"Transport"_
+6. Enter _"localhost"_ for _"Host"_
+7. Enter _"8000"_ for _"Port"_
+8. Select _"JDK 9 or later"_ beside _"Command line arguments for remote JVM"_
+9. Select _"JavaVulnerableLab"_ for _"Use module classpath"_
+10. Click _"Apply"_ and then _"Ok"_
 
 ## Optional Step - Manage the Database with MySQL Workbench
 ### Prerequisites
@@ -42,10 +42,10 @@ Install [MySQL Workbench](https://www.mysql.com/products/workbench/)
 
 ### Add the MySQL Connection
 1. Run _MySQL Workbench_
-2. Click the '+' symbol beside _MySQL Connections_
+2. Click the _'+'_ symbol beside _MySQL Connections_
 3. Enter _tud-cybersec-java-lab_ for _Connection Name_ 
 4. Keep default values and click _Store in Vault ..._
-5. Enter "root" for the root password
+5. Enter _"root"_ for the root password
 6. Click _Ok_
 7. Click _Test Connection_
 8. If _Test Connection_ succeeds, click _Ok_
