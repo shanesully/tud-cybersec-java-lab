@@ -1,24 +1,40 @@
 # tud-cybersec-java-lab
-A Docker-based solution for getting __JavaVulnerableLab__ up and running
+A Docker-based solution to run the __JavaVulnerableLab__ for the TUD Cyber Security course
 
 ## Setup
 ### Prerequisites
 1. Installed [Docker Desktop](https://www.docker.com/products/docker-desktop/)
-3. Downloaded _JavaVulnerableLab.zip_ from _Lab2- Java- Vulnerable-LabAssignment_ on Moodle
+2. Installed [Maven](https://maven.apache.org/)
+3. Set your __"JAVA_HOME"__ environment variable to point to a Java 8 SDK (the Tomcat image uses "openjdk 17.0.6" but the war file _must_ be built with Java 8)
 
-### Build JavaVulnerableLab.war
-1. Extract _JavaVulnerableLab.zip_
-2. Run `mvn clean package` from the _JavaVulnerableLab_ directory
-3. Move _JavaVulnerableLab/target/JavaVulnerableLab.war_ to _tud-cybersec-java-lab/artifacts/JavaVulnerableLab.war_
+### Setup Script
+To setup the JavaVulnerableLab, run the setup script if you're on on macOS, Linux or WSL:
+
+```./setup.sh```
+
+This will build the Maven project and move the resulting war file to the artifacts directory
 
 ### Setup Docker
 1. Start _Docker Desktop_
-2. Run `docker compose up` from the _tud-cybersec-java-lab_ directory
+2. Run `docker compose up` from the _tud-cybersec-java-lab_ directory after running the setup script ("artifacts/JavaVulnerableLab.war" exists)
 
 ### Install Data
 1. Open in browser: [http://localhost:8080/JavaVulnerableLab/install.jsp](http://localhost:8080/JavaVulnerableLab/install.jsp)
 2. Replace the __JDBC URL__ String with `jdbc:mysql://mysql:3306/abc`
 3. Click _Install_
+
+## Optional Step - Attach to IntelliJ Debugger
+The above configuration starts the JavaVulnerableLab in debug mode by default. To connect to it:
+1. Open the JavaVulnerableLab project in IntelliJ
+2. In the IntelliJ top-level menu, select "Run" -> "Edit Configurations..."
+3. Click '+' -> "Add New Configuration" -> "Remote JVM Debug"
+4. Select "Attach to remote JVM" for "Debugger Mode"
+5. Select "Socket" for "Transport"
+6. Enter "localhost" for "Host"
+7. Enter "8000" for "Port"
+8. Select "JDK 9 or later" beside "Command line arguments for remote JVM"
+9. Select "JavaVulnerableLab" for "Use module classpath"
+10. Click "Apply" and then "Ok"
 
 ## Optional Step - Manage the Database with MySQL Workbench
 ### Prerequisites
