@@ -84,3 +84,6 @@ users
 
 ## Teardown
 To teardown the lab environment run: `docker compose down`
+
+## Todo
+Add a third container with Java and Maven. Load the lab code into that container, build the war and then copy it to a shared volume accessible by the Tomcat container. Make this third container a dependency such that the Tomcat container won't start up before the war file is accessible on the shared volume. The setup script can then be removed. This removes Java and Maven as dependencies and isolates the packaging step from the deploy and run steps. Once this is setup then the lab code can be moved to an external git repo. This will truly make the Java lab a one-click install for the user.
