@@ -3,8 +3,8 @@ A Docker-based solution to run the __JavaVulnerableLab__ for the TUD Cyber Secur
 
 ## Setup
 ### Prerequisites
-Install and run [Docker Desktop](https://www.docker.com/products/docker-desktop/)
-Initialize submodules: `git submodule update --init --recursive`
+1. Install and run [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+2. Initialize submodules: `git submodule update --init --recursive`
 
 ### Create Lab
 Run `docker compose up`
@@ -38,9 +38,8 @@ Install and run [MySQL Workbench](https://www.mysql.com/products/workbench/)
 1. Select _+_ beside _MySQL Connections_
 2. Select _Connection Name_ -> _tud-cybersec-java-lab_
 3. Select _Username_ -> _root_
-4. Select _Store in Vault ..._ -> _Password_ -> _root_
-5. Select _Ok_ for the _Store Password for Connection_ dialog
-6. Select _Ok_ for the _Setup New Connection_ dialog
+4. Select _Store in Vault ..._ -> _Password_ -> _root_ -> _Ok_
+5. Select _Ok_
 
 ### Check Databases
 With _MySQL Workbench_ open, after completing the _Install Data_ step above
@@ -62,7 +61,7 @@ UserMessages
 users
 ```
 
-Query:
+Execute Query:
 ```
 USE `trump`;
 SHOW TABLES;
