@@ -16,8 +16,8 @@ Install [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 
 ## Optional Step - Debug with IntelliJ
 The above configuration starts the __JavaVulnerableLab__ in _debug mode_ by default. To connect to it:
-1. Open the __JavaVulnerableLab__ project in __IntelliJ__
-2. In the IntelliJ top-level menu, select _"Run"_ -> _"Edit Configurations..."_
+1. Open in __IntelliJ__
+2. Select _"Run"_ -> _"Edit Configurations..."_
 3. Click _'+'_ -> _"Add New Configuration"_ -> _"Remote JVM Debug"_
 4. Select _"Attach to remote JVM"_ for _"Debugger Mode"_
 5. Select _"Socket"_ for _"Transport"_
@@ -25,7 +25,7 @@ The above configuration starts the __JavaVulnerableLab__ in _debug mode_ by defa
 7. Enter _"8000"_ for _"Port"_
 8. Select _"JDK 9 or later"_ beside _"Command line arguments for remote JVM"_
 9. Select _"JavaVulnerableLab"_ for _"Use module classpath"_
-10. Click _"Apply"_ and then _"Ok"_
+10. Click _"Ok"_
 
 ## Optional Step - Manage the Database with MySQL Workbench
 ### Prerequisites
@@ -35,11 +35,9 @@ Install [MySQL Workbench](https://www.mysql.com/products/workbench/)
 1. Run _MySQL Workbench_
 2. Click the _'+'_ symbol beside _MySQL Connections_
 3. Enter _tud-cybersec-java-lab_ for _Connection Name_ 
-4. Keep default values and click _Store in Vault ..._
+4. Click _Store in Vault ..._
 5. Enter _"root"_ for the root password
 6. Click _Ok_
-7. Click _Test Connection_
-8. If _Test Connection_ succeeds, click _Ok_
 
 ### Query the abc Database
 Run the following in the _MySQL Workbench_ query editor:
@@ -74,4 +72,4 @@ users
 ```
 
 ## Teardown
-To teardown the lab environment run: `docker compose down`
+To delete the lab run: `docker compose down`
