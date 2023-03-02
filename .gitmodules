@@ -1,0 +1,3 @@
+[submodule "java-vulnerable-lab"]
+	path = java-vulnerable-lab
+	url = https://github.com/shanesully/java-vulnerable-lab.git
