@@ -1,4 +1,4 @@
-version: '3.3'
+version: '3.8'
 
 services:
   tud-cybersec-mysql:
@@ -10,12 +10,21 @@ services:
       MYSQL_ROOT_PASSWORD: "root"
     hostname: mysql # for JDBC URL
     volumes:
-     - "./scripts/schema.sql:/docker-entrypoint-initdb.d/1.sql"
-     - "./scripts/data.sql:/docker-entrypoint-initdb.d/2.sql"
+     - ./scripts/schema.sql:/docker-entrypoint-initdb.d/1.sql
+     - ./scripts/data.sql:/docker-entrypoint-initdb.d/2.sql
+  tud-cybersec-maven:
+    image: maven:3.3-jdk-8
+    working_dir: "/usr/src/buildir"
+    command: mvn clean package --quiet
+    volumes:
+      - ./JavaVulnerableLab:/usr/src/buildir
   tud-cybersec-tomcat:
     image: tomcat:9
     depends_on:
-      - tud-cybersec-mysql
+      tud-cybersec-mysql:
+        condition: service_started
+      tud-cybersec-maven:
+        condition: service_completed_successfully
     ports:
       - 8080:8080 # for application
       - 8001:8001 # for Java debug
@@ -25,4 +34,4 @@ services:
       JPDA_TRANSPORT: dt_socket
     command: catalina.sh jpda run
     volumes:
-      - ./artifacts/JavaVulnerableLab.war:/usr/local/tomcat/webapps/JavaVulnerableLab.war
+      - ./JavaVulnerableLab/target/JavaVulnerableLab.war:/usr/local/tomcat/webapps/JavaVulnerableLab.war
