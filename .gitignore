@@ -1,4 +1,2 @@
-artifacts/*
-!artifacts/.gitkeep
 JavaVulnerableLab/target
 JavaVulnerableLab/.idea
