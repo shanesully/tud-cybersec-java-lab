@@ -7,10 +7,10 @@ Install [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 
 ### Setup Docker
 1. Start _Docker Desktop_
-2. Run `docker compose up` from the _tud-cybersec-java-lab_ directory
+2. Run `docker compose up`
 
 ### Install Data
-1. Open in browser: [http://localhost:8080/JavaVulnerableLab/install.jsp](http://localhost:8080/JavaVulnerableLab/install.jsp)
+1. Open: [http://localhost:8080/JavaVulnerableLab/install.jsp](http://localhost:8080/JavaVulnerableLab/install.jsp)
 2. Replace the __JDBC URL__ String with `jdbc:mysql://mysql:3306/abc`
 3. Click _Install_
 
