@@ -3,11 +3,11 @@ A Docker-based solution to run the __JavaVulnerableLab__ for the TUD Cyber Secur
 
 ## Setup
 ### Prerequisites
-1. Installed [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+Install [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 
 ### Setup Docker
 1. Start _Docker Desktop_
-2. Run `docker compose up` from the _tud-cybersec-java-lab_ directory after running the setup script
+2. Run `docker compose up` from the _tud-cybersec-java-lab_ directory
 
 ### Install Data
 1. Open in browser: [http://localhost:8080/JavaVulnerableLab/install.jsp](http://localhost:8080/JavaVulnerableLab/install.jsp)
