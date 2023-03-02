@@ -75,6 +75,3 @@ users
 
 ## Teardown
 To teardown the lab environment run: `docker compose down`
-
-## Todo
-Externalise JavaVulnerableLab code to separate repo
