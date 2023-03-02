@@ -17,7 +17,7 @@ services:
     working_dir: "/usr/src/buildir"
     command: mvn clean package --quiet
     volumes:
-      - ./JavaVulnerableLab:/usr/src/buildir
+      - ./java-vulnerable-lab:/usr/src/buildir
   tud-cybersec-tomcat:
     image: tomcat:9
     depends_on:
@@ -34,4 +34,4 @@ services:
       JPDA_TRANSPORT: dt_socket
     command: catalina.sh jpda run
     volumes:
-      - ./JavaVulnerableLab/target/JavaVulnerableLab.war:/usr/local/tomcat/webapps/JavaVulnerableLab.war
+      - ./java-vulnerable-lab/target/JavaVulnerableLab.war:/usr/local/tomcat/webapps/JavaVulnerableLab.war
